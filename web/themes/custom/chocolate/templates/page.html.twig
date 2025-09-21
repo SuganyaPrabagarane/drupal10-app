@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>{% if title %}{{ title }} — {% endif %}REACT25K</title>
+    {{
+      attach_library("nature/global-styling")
+    }}
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      {{ page.header }}
+      <br />
+      <div class="heading">
+        <h1>Finland Music School</h1>
+      </div>
+      <nav class="menu">
+        {{ page.menu }}
+      </nav>
+    </header>
+
+    <!-- Main -->
+    <main class="main container">
+      <div class="content">
+        {% if title %}
+        <h1 class="page-title">{{ title }}</h1>
+        {% endif %}
+        {{ page.content }}
+        {{ first_module_variable }}
+      </div>
+
+      {% if page.sidebar %}
+      <aside class="sidebar">
+        {{ page.sidebar }}
+      </aside>
+      {% endif %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-bottom">
+          <p>Copyrights © REACT25K</p>
+          <p>
+            Powered by
+            <a href="https://juvenalia.fi/" target="_blank" rel="noopener"
+              >Juvenalia</a
+            >
+          </p>
+          {{ page.footer }}
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

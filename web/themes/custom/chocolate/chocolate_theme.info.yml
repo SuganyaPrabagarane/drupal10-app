@@ -1,0 +1,16 @@
+name: Chocolate theme
+type: theme
+description: Simple Chocolate theme for Assignment
+base theme: false
+version: 0.0.1
+core_version_requirement: ^10 || ^11
+libraries:
+  - chocolate_theme/global
+
+regions:
+  header: header
+  menu: menu
+  content: content
+  sidebar: sidebar
+  footer: footer
+  

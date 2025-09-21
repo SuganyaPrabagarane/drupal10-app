@@ -1,0 +1,52 @@
+{#
+    Custom node template for Chocolate theme
+    Displays: title, author info, content, tags, read more links, and comments
+  #}
+  
+  <article{{ attributes.addClass('node', 'node--type-' ~ node.bundle|clean_class) }}>
+  
+    {# ---------- Title ---------- #}
+    {% if label and not page %}
+      <h2{{ title_attributes.addClass('node-title') }}>
+        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+      </h2>
+    {% elseif label and page %}
+      <h1{{ title_attributes.addClass('page-title') }}>
+        {{ label }}
+      </h1>
+    {% endif %}
+  
+    {# ---------- Author Info ---------- #}
+    <div class="node-meta">
+      <span class="node-author">By {{ author_name }}</span>
+      <span class="node-date">on {{ date }}</span>
+    </div>
+  
+    {# ---------- Node Content ---------- #}
+    <div{{ content_attributes.addClass('node-content') }}>
+      {{ content|without('links', 'field_tags', 'comment') }}
+    </div>
+  
+    {# ---------- Tags ---------- #}
+    {% if content.field_tags %}
+      <div class="node-tags">
+        {{ content.field_tags }}
+      </div>
+    {% endif %}
+  
+    {# ---------- Read More / Links ---------- #}
+    {% if content.links %}
+      <div class="node-readmore">
+        {{ content.links }}
+      </div>
+    {% endif %}
+  
+    {# ---------- Comments ---------- #}
+    {% if content.comment %}
+      <div class="node-comments">
+        {{ content.comment }}
+      </div>
+    {% endif %}
+  
+  </article>
+  
