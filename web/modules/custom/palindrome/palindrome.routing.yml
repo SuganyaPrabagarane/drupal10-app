@@ -1,0 +1,7 @@
+name_module.page:
+  path: '/palindrome'
+  defaults:
+    _controller: '\Drupal\palindrome\Controller\PalindromeController::content'
+    _title: "Palindrome Checker module"
+  requirements:
+    _permission: "access content"

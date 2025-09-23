@@ -10,24 +10,23 @@
   <body>
     <!-- Header -->
     <header class="header">
-      {{ page.header }}
-      <br />
-      <div class="heading">
+      <div class="brand">
+        {{ page.header }} {# this is your logo block #}
         <h1>Finland Music School</h1>
       </div>
+
       <nav class="menu">
         {{ page.menu }}
       </nav>
     </header>
 
     <!-- Main -->
-    <main class="main container">
+    <main class="main">
       <div class="content">
         {% if title %}
         <h1 class="page-title">{{ title }}</h1>
         {% endif %}
         {{ page.content }}
-        {{ first_module_variable }}
       </div>
 
       {% if page.sidebar %}

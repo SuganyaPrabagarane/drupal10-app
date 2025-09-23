@@ -1,8 +1,12 @@
-/* =========================
-   Base Styles
-========================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Segoe UI", Arial, sans-serif;
+  width: 100%;
   margin: 0;
   padding: 0;
   line-height: 1.6;
@@ -17,39 +21,39 @@ h3 {
   font-weight: 600;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* =========================
-     Header
-  ========================= */
+/* Header*/
 .header {
   background: #2c3e50;
   color: #fff;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
 
-.header .heading h1 {
-  font-size: 2rem;
-  text-align: center;
-  margin-right: 110vh;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-.header img {
-  max-width: 80px;
+.brand img {
+  max-width: 60px;
   height: auto;
 }
 
-/* Navigation Menu */
-.menu {
-  text-align: center;
+.brand h1 {
+  font-size: 1.8rem;
+  margin: 0;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
 ul,
@@ -61,39 +65,37 @@ ol {
   margin: 0;
 }
 
-.menu a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
 .menu a:hover {
-  color: #1abc9c;
+  color: #54cf0d;
 }
 
-/* =========================
-     Main Content
-  ========================= */
+/* Main */
 .main {
   display: flex;
   justify-content: space-between;
-  max-width: 1200px;
-  margin: auto;
-  padding: 30px 20px;
+  width: 100%;
+  padding: 20px;
   gap: 20px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .content {
-  flex: 0 0 75%;
-  order: 1;
+  flex: 1 1 70%;
+  min-width: 300px;
   background: #fff;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
 }
 
+.sidebar {
+  flex: 1 1 25%;
+  min-width: 200px;
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
 .page-title {
   margin-bottom: 1rem;
   font-size: 1.8rem;
@@ -101,21 +103,6 @@ ol {
   padding-bottom: 0.5rem;
 }
 
-/* Sidebar */
-.sidebar {
-  flex: 0 0 25%;
-  order: 2;
-  background: #f4f4f4;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-}
-
-/* =========================
-     Node / Content Styling
-  ========================= */
-
-/* Author Info */
 .node-meta {
   font-size: 0.9rem;
   color: #555;
@@ -125,14 +112,12 @@ ol {
   font-style: italic;
 }
 
-/* Node Content */
 .node-content {
   margin-bottom: 1.5rem;
   line-height: 1.6;
   color: #333;
 }
 
-/* Tags */
 .field--name-field-tags {
   margin-top: 1rem;
   display: flex;
@@ -164,7 +149,6 @@ ol {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Read More */
 .node-readmore {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -172,9 +156,9 @@ ol {
 
 .node-readmore a {
   display: inline-block;
-  background: #1abc9c;
+  background: #0990b6;
   color: #fff !important;
-  padding: 6px 12px;
+  padding: 10px 20px;
   border-radius: 4px;
   font-size: 1rem;
   font-weight: 600;
@@ -183,10 +167,9 @@ ol {
 }
 
 .node-readmore a:hover {
-  background: #16a085;
+  background: #067d9d;
 }
 
-/* Comments Section */
 .node-comments {
   margin-top: 2rem;
   padding: 1rem;
@@ -212,7 +195,7 @@ ol {
 
 .node-comments .comment .comment__author {
   font-weight: 600;
-  color: #1abc9c;
+  color: #15aa8c;
 }
 
 .node-comments .comment .comment__content {
@@ -220,7 +203,6 @@ ol {
   color: #333;
 }
 
-/* Comment Form */
 .node-comments .comment-form {
   margin-top: 1.5rem;
   padding: 1rem;
@@ -246,12 +228,10 @@ ol {
 }
 
 .node-comments .comment-form input[type="submit"] {
-  background: #1abc9c;
+  background: #0995bc;
   margin-top: 10px;
-  /* min-height: 3vh;
-  min-width: 4vh; */
   color: #fff;
-  padding: 6px 14px;
+  padding: 10px 20px;
   border-radius: 4px;
   border: none;
   cursor: pointer;
@@ -261,12 +241,10 @@ ol {
 }
 
 .node-comments .comment-form input[type="submit"]:hover {
-  background: #16a085;
+  background: #068aaf;
 }
 
-/* =========================
-     Footer
-  ========================= */
+/*  Footer */
 .footer {
   background: #2c3e50;
   color: #fff;
@@ -281,24 +259,35 @@ ol {
 }
 
 .footer .footer-bottom a {
-  color: #fff;
+  color: #69e907;
+  text-decoration: underline;
+  transition: color 0.3s;
 }
 
 .footer .footer-bottom a:hover {
-  color: #5cff05;
+  color: #5bde03;
 }
-/* =========================
-     Responsive
-  ========================= */
+
 @media (max-width: 768px) {
-  .main {
+  .header {
     flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .brand {
+    flex-direction: column;
+  }
+
+  .menu ul {
+    justify-content: center;
     flex-wrap: wrap;
   }
 
-  .menu li {
-    display: block;
-    margin: 0.5rem 0;
+  .main {
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .content,

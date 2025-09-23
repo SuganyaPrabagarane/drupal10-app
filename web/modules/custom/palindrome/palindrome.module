@@ -1,0 +1,50 @@
+<?php
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_form_alter().
+ **/
+
+// function first_module_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+// {
+//     if ($form_id = 'user-login-form') {
+//         $form['#title'] = t('Welcome to Drupal');
+//         $form['name']['#attributes']['placeholder'] = t('Enter your username');
+//         $form['pass']['#attributes']['placeholder'] = t('Enter your password');
+//     }
+// }
+
+
+// /**
+//  * Implements hook_preprocess_page().
+//  **/
+
+// function first_module_preprocess_page(&$variables)
+// {
+//     $variables['first_module_variable'] = 'My First D10 Module';
+// }
+
+/**
+ * Implements hook_help().
+ **/
+
+function palindrome_help($route_name, RouteMatchInterface $route_match)
+{
+    switch ($route_name) {
+        case 'help.page.palindrome':
+            $output = '';
+            $output .= '<h3>' . t('About') . '</h3>';
+            $output .= '<p>' . t('This is Palindrome Checker module.') . '</p>';
+            return $output;
+        default:
+    }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function palindrome_page_attachments(array &$attachments)
+{
+    $attachments['#attached']['library'][] = 'palindrome/palindrome';
+}
