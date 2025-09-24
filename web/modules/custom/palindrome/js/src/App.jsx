@@ -14,8 +14,7 @@ function App() {
     }
 
     setError(""); 
-    const word = text.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
-    // const word = text.toLowerCase();
+   const word = text.toLowerCase();
     const reversedWord = word.split("").reverse().join("");
     setIsPalindrome(word === reversedWord);
   };
@@ -28,18 +27,19 @@ function App() {
 
   return (
     <div className="container">
-      <h2>Palindrome Checker</h2>
+      {/* <h2>Palindrome Checker</h2> */}
+      
       <input
         type="text"
         className="input"
         value={text}
         onChange={(e) => setText(e.target.value)}
-        placeholder="Enter text"
+        placeholder="Enter a word or phrase"
       />
-      <div className='button'>
+     
         <button className="check-button" onClick={checkPalindrome}>Check</button>
-        <button className="save-button" onClick={handleDelete}>Delete</button>
-      </div>
+        <button className="save-button" onClick={handleDelete}>Clear</button>
+   
 
       {error && (
         <p className="error-message">{error}</p>

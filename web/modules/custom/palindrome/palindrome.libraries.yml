@@ -2,6 +2,6 @@ palindrome:
   version: 1
   js:
     js/dist/main.min.js: {}
-  css:
-    theme:
-      css/palindrome.css: {} 
+  # css:
+  #   theme:
+  #     css/palindrome.css: {} 

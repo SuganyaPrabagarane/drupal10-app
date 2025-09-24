@@ -34,7 +34,7 @@
 }
 
 /* Button container */
-#palindrome-root .button {
+#palindrome-root button {
   display: flex;
   justify-content: center;
   gap: 10px;
