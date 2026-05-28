@@ -21,6 +21,7 @@
         "drupal/core-project-message": "^10.5",
         "drupal/core-recommended": "^10.5",
         "drupal/devel": "^5.4",
+        "drupal/mahi": "^1.1",
         "drupal/remove_meta_info": "^1.0",
         "drupal/tara": "^11.0",
         "drupal/webprofiler": "^10.3",
